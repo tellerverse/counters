@@ -3,51 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>m&m's calendar</title>
+  <title>Progress</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <div id="caption">x</div>
+  <h1 id="caption">Auslandsjahr</h1>
 
   <div class="dates">
-    <div>
-      <span>Start</span>
-      <strong id="startDate"></strong>
-    </div>
-    <div>
-      <span>Heute</span>
-      <strong id="todayDate"></strong>
-    </div>
-    <div>
-      <span>Ende</span>
-      <strong id="endDate"></strong>
-    </div>
+    <div><span>Start</span><strong id="startDate"></strong></div>
+    <div><span>Heute</span><strong id="todayDate"></strong></div>
+    <div><span>Ende</span><strong id="endDate"></strong></div>
   </div>
 
-  <div class="progress-wrapper">
-    <div class="progress-bar">
-      <div class="progress" id="progress"></div>
-    </div>
-    <span id="progressText"></span>
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
   </div>
+  <div id="progressText"></div>
 
   <div class="stats">
-    <div class="stat">
-      <span>Noch</span>
-      <strong id="daysLeft"></strong>
-      <small>Tage</small>
-    </div>
-    <div class="stat">
-      <span>Geschafft</span>
-      <strong id="daysPassed"></strong>
-      <small>Tage</small>
-    </div>
-    <div class="stat">
-      <span>Gesamt</span>
-      <strong id="daysTotal"></strong>
-      <small>Tage</small>
+    <div><strong id="daysPassed"></strong><span>geschafft</span></div>
+    <div><strong id="daysLeft"></strong><span>übrig</span></div>
+    <div><strong id="daysTotal"></strong><span>gesamt</span></div>
+  </div>
+
+  <button id="addEntry">➕ Neuer Datensatz</button>
+
+  <div id="formOverlay" class="hidden">
+    <div class="form">
+      <h3>Neuer Datensatz</h3>
+
+      <input type="date" id="fStart">
+      <input type="date" id="fEnd">
+      <input type="text" id="fCaption" placeholder="Titel / Caption">
+      <input type="color" id="fColor">
+
+      <button id="saveEntry">Speichern</button>
+      <button id="cancelEntry">Abbrechen</button>
     </div>
   </div>
 </div>

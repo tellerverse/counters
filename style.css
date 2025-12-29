@@ -6,36 +6,29 @@
 body {
   margin: 0;
   background: #0f0f14;
-  color: #fff;
+  color: white;
 }
 
 .container {
-  padding: 20px;
-  max-width: 480px;
+  max-width: 420px;
   margin: auto;
+  padding: 20px;
 }
 
-#caption {
-  font-size: 30px;
-  font-weight: bold;
+h1 {
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .dates {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .dates span {
   font-size: 12px;
   color: #aaa;
-}
-
-.progress-wrapper {
-  margin-bottom: 30px;
 }
 
 .progress-bar {
@@ -49,37 +42,64 @@ body {
 .progress {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #ff4d6d, #ff8fa3);
-  transition: width 0.6s ease;
 }
 
 #progressText {
-  display: block;
   text-align: center;
-  margin-top: 8px;
-  font-size: 14px;
+  margin: 8px 0 20px;
 }
 
 .stats {
   display: flex;
   justify-content: space-between;
-}
-
-.stat {
-  background: #1c1c25;
-  border-radius: 12px;
-  padding: 15px;
-  width: 30%;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.stat span {
-  font-size: 12px;
-  color: #aaa;
+.stats div {
+  background: #1c1c25;
+  border-radius: 10px;
+  padding: 10px;
+  width: 30%;
 }
 
-.stat strong {
-  display: block;
-  font-size: 22px;
-  margin: 5px 0;
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#formOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#formOverlay.hidden {
+  display: none;
+}
+
+.form {
+  background: #1c1c25;
+  padding: 20px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 320px;
+}
+
+.form input,
+.form button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
 }
