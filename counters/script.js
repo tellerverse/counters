@@ -34,6 +34,17 @@ const leftDays = Math.max(0, totalDays - passedDays);
 const progress = Math.min(100, Math.round((passedDays / totalDays) * 100));
 
 // ---------- UI ----------
+if (dates.image) {
+  const container = document.querySelector(".container");
+
+  if (dates.image) {
+    container.style.backgroundImage = `url("${dates.image}")`;
+    container.style.backgroundSize = "cover";
+    container.style.backgroundPosition = "center";
+    container.style.backgroundRepeat = "no-repeat";
+  }
+
+}
 document.getElementById("caption").textContent = dates.caption;
 document.getElementById("startDate").textContent = start.toLocaleDateString("de-DE");
 document.getElementById("todayDate").textContent = today.toLocaleDateString("de-DE");
