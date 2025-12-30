@@ -134,35 +134,3 @@ function lightenColor(hex, amount = 40) {
 
   return `rgb(${r}, ${g}, ${b})`;
 }
-
-document.getElementById("activateNotif").onclick = async () => {
-  if (!("Notification" in window)) {
-    alert("Dein Browser unterstützt keine Benachrichtigungen");
-    return;
-  }
-
-  let permission = Notification.permission;
-
-  if (permission === "granted") {
-    alert("Benachrichtigungen sind bereits aktiviert");
-  } else if (permission !== "denied") {
-    permission = await Notification.requestPermission();
-    if (permission === "granted") {
-      new Notification("Benachrichtigungen aktiviert ✅");
-    } else {
-      alert("Benachrichtigungen nicht erlaubt");
-    }
-  } else {
-    alert("Benachrichtigungen blockiert, bitte Browser-Einstellungen prüfen");
-  }
-};
-
-document.getElementById("shareLink").onclick = async () => {
-  try {
-    const url = window.location.href;
-    await navigator.clipboard.writeText(url);
-    alert("Link kopiert: " + url);
-  } catch (err) {
-    alert("Konnte Link nicht kopieren: " + err);
-  }
-};
