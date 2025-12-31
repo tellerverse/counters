@@ -118,25 +118,50 @@ function darkenColor(hex, amount = 60) {
   return `rgb(${Math.max(0,r-amount)},${Math.max(0,g-amount)},${Math.max(0,b-amount)})`;
 }
 document.getElementById("shareBtn").onclick = async () => {
-  const target = document.querySelector(".container");
+  const progressBar = document.querySelector(".progress-bar");
+  const progressText = document.getElementById("progressText");
 
-  const canvas = await html2canvas(target, {
-    backgroundColor: null,
-    scale: 2
+  // Wrapper nur für Screenshot
+  const wrapper = document.createElement("div");
+  wrapper.style.position = "fixed";
+  wrapper.style.inset = "0";
+  wrapper.style.display = "flex";
+  wrapper.style.flexDirection = "column";
+  wrapper.style.justifyContent = "center";
+  wrapper.style.alignItems = "center";
+  wrapper.style.background = "#0f0f14";
+  wrapper.style.zIndex = "-1";
+
+  // Klone
+  const barClone = progressBar.cloneNode(true);
+  const textClone = progressText.cloneNode(true);
+
+  barClone.style.width = "80%";
+  barClone.style.marginTop = "16px";
+
+  textClone.style.fontSize = "4rem";
+  textClone.style.marginBottom = "20px";
+
+  wrapper.append(textClone, barClone);
+  document.body.appendChild(wrapper);
+
+  const canvas = await html2canvas(wrapper, {
+    scale: 2,
+    backgroundColor: "#0f0f14"
   });
+
+  document.body.removeChild(wrapper);
 
   canvas.toBlob(async blob => {
     const file = new File([blob], "progress.png", { type: "image/png" });
 
-    // Mobile / moderne Browser
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       await navigator.share({
         files: [file],
-        title: "Mein Fortschritt",
+        title: "Fortschritt",
         text: "Aktueller Stand"
       });
     } else {
-      // Fallback: Download
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
       a.download = "progress.png";
