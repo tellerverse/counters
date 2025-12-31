@@ -42,7 +42,7 @@ h1 {
 .progress {
   height: 100%;
   width: 0%;
-  transition: width 1.0s ease-in-out;
+  transition: width 0.05s linear;
 
 }
 
