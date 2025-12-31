@@ -195,18 +195,21 @@ saveBtn.onclick = async () => {
   }
 
   try {
-    await set(ref(db, `dates/${viewKey}`), {
+    // Key aus Titel generieren (z. B. Leerzeichen entfernen und kleinschreiben)
+    const newKey = caption.replace(/\s+/g, "_").toLowerCase();
+
+    // Neuen Datensatz unter 'dates' mit diesem Key speichern
+    await set(ref(db, `dates/${newKey}`), {
       start,
       end,
       caption,
       color
     });
 
-    // Overlay schließen
     overlay.classList.add("hidden");
 
-    // Auf die View-Seite weiterleiten
-    window.location.href = `index.html?view=${viewKey}`;
+    // Auf die neue View weiterleiten
+    window.location.href = `index.html?view=${newKey}`;
   } catch (err) {
     console.error("Fehler beim Speichern:", err);
     alert("Fehler beim Speichern!");
