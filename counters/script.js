@@ -31,7 +31,7 @@ const oneDay = 1000 * 60 * 60 * 24;
 const totalDays = Math.round((end - start) / oneDay);
 const passedDays = Math.max(0, Math.round((today - start) / oneDay));
 const leftDays = Math.max(0, totalDays - passedDays);
-const progress = Math.min(100, Math.round((passedDays / totalDays) * 100));
+const progress = Math.min(100, Math.round((passedDays / totalDays) * 10000) / 100);
 
 // ---------- UI ----------
 if (dates.image) {
