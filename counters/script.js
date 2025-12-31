@@ -120,28 +120,33 @@ function darkenColor(hex, amount = 60) {
 document.getElementById("shareBtn").onclick = async () => {
   const progressBar = document.querySelector(".progress-bar");
   const progressText = document.getElementById("progressText");
+  const captionText = document.getElementById("caption");
 
   // Wrapper nur für Screenshot
   const wrapper = document.createElement("div");
   wrapper.style.display = "inline-block";
   wrapper.style.background = "#0f0f14";
-  wrapper.style.padding = "10px"; // kleiner Padding oben/unten
+  wrapper.style.padding = "10px"; // minimaler Abstand
   wrapper.style.borderRadius = "12px";
   wrapper.style.textAlign = "center";
 
   // Klone
-  const barClone = progressBar.cloneNode(true);
+  const captionClone = captionText.cloneNode(true);
   const textClone = progressText.cloneNode(true);
+  const barClone = progressBar.cloneNode(true);
 
-  // Schrift kleiner
+  // Schriftgrößen anpassen
+  captionClone.style.fontSize = "1.8rem";
+  captionClone.style.margin = "4px 0";
   textClone.style.fontSize = "2.5rem";
   textClone.style.margin = "8px 0";
 
-  // Progressbar größe passend
-  barClone.style.width = "300px"; // optional anpassen
+  // Progressbar kompakt
+  barClone.style.width = "300px";
   barClone.style.height = "16px";
   barClone.style.margin = "0 auto";
 
+  wrapper.appendChild(captionClone);
   wrapper.appendChild(textClone);
   wrapper.appendChild(barClone);
 
