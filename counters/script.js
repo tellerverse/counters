@@ -67,7 +67,7 @@ progressEl.style.background =
   `linear-gradient(90deg, ${dates.color}, ${lightenColor(dates.color, 80)})`;
 
 document.getElementById("progressText").textContent =
-  progress + "% geschafft";
+  progress + "%";
 
 // ---------- Overlay & Formular ----------
 const overlay = document.getElementById("formOverlay");
