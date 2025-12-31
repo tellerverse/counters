@@ -20,6 +20,7 @@ h1 {
 }
 
 .dates {
+  color: #ff0000;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -43,7 +44,6 @@ h1 {
   height: 100%;
   width: 0%;
   transition: width 0.05s linear;
-
 }
 
 #progressText {
@@ -65,7 +65,7 @@ h1 {
   width: 30%;
 }
 
-.buttons button{
+.buttons button {
   width: relative;
   padding: 12px;
   border: none;
@@ -101,6 +101,7 @@ h1 {
   font-size: 30px;
   text-align: center;
 }
+
 .form button,
 .form input {
   width: 49%;
@@ -121,22 +122,30 @@ h1 {
     background: linear-gradient(180deg, #0f0f14, #12121a);
   }
 
+  /*
   .container {
-    padding: 16px;
+    padding: 1px;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+  */
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 3rem;
     margin-bottom: 16px;
   }
 
   .dates {
     gap: 10px;
-    font-size: 0.85rem;
+    font-size: 1.2rem;
   }
 
   .dates div {
@@ -149,7 +158,7 @@ h1 {
   }
 
   #progressText {
-    font-size: 0.95rem;
+    font-size: 3.5rem;
     font-weight: 600;
     opacity: 0.9;
   }
@@ -162,55 +171,4 @@ h1 {
     padding: 14px 8px;
     border-radius: 14px;
   }
-
-  .stats strong {
-    font-size: 1.4rem;
-    display: block;
-    margin-bottom: 2px;
-  }
-
-  .stats span {
-    font-size: 0.7rem;
-    opacity: 0.8;
-    line-height: 1.2;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .buttons button {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    font-size: 28px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-  }
-
-  /* Formular */
-  .form {
-    border-radius: 18px;
-    padding: 20px;
-  }
-
-  .form h3 {
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-  }
-
-  .form input,
-  .form button {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .form input {
-    margin-bottom: 10px;
-  }
-
-  .form button {
-    margin-bottom: 6px;
-  }
-} 
+}
