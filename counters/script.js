@@ -165,8 +165,8 @@ document.getElementById("shareBtn").onclick = async () => {
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       await navigator.share({
         files: [file],
-        title: "Fortschritt",
-        text: "Aktueller Stand"
+        title: "",
+        text: ""
       });
     } else {
       const a = document.createElement("a");
