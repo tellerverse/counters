@@ -1,55 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!--<meta name="referrer" content="no-referrer"> -->
-  <title>Progress</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="container">
-  <h1 id="caption">caption</h1>
-
-  <div class="dates">
-    <div><span>start<br></span><strong id="startDate"></strong></div>
-    <div><span>heute<br></span><strong id="todayDate"></strong></div>
-    <div><span>ende<br></span><strong id="endDate"></strong></div>
-  </div>
-
-  <div id="progressText"></div>
-
-  <div class="progress-bar">
-    <div class="progress" id="progress"></div>
-  </div>
-
-  <div class="stats">
-    <div><strong id="daysPassed"></strong><span>geschafft</span></div>
-    <div><strong id="daysLeft"></strong><span>übrig</span></div>
-    <div><strong id="daysTotal"></strong><span>gesamt</span></div>
-  </div>
-
-  <div class="buttons">
-    <button id="addEntry">➕</button>
-    <button id="shareBtn">📤</button>
-  </div>
-
-  <div id="formOverlay" class="hidden">
-    <div class="form">
-      <h3>neuer counter</h3>
-
-      <input type="date" id="fStart" placeholder="start">
-      <input type="date" id="fEnd" placeholder="ende">
-      <input type="text" id="fCaption" placeholder="titel">
-      <input type="color" id="fColor" placeholder="farbe">
-
-      <button id="saveEntry" style="background: rgb(128, 255, 128)">speichern</button>
-      <button id="cancelEntry" style="background: rgb(255, 128, 128)">abbrechen</button>
-    </div>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script> 
-<script type="module" src="script.js"></script>
-</body>
+  <head>
+    <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
+    <title>umleitung</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script type="module">
+      window.addEventListener("load", () => {
+        window.location.href = "../index.html?view=anton_";
+      });
+    </script>
+  </body>
 </html>
